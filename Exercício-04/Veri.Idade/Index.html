@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <title>Verifique se você está na idade para acessar noso site.</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', courier;
+        }
+    </style>
+    </head>
+<body class="bg-gradient-to-br from-brown-500 to-yellow-700 bg-stone-700 min-h-screen flex flex-col items-center justify-center p-4">
+    <!-- Cabeçalho -->
+    <header class="w-full max-w-md bg-white p-4 rounded-xl shadow-lg mb-6 flex items-center justify-center border border-gray-800">
+        <img src="../img/WhatsApp Image 2025-07-10 at 10.44.34.jpeg" alt="Logo"  width="85%" class="rounded-full mr-4 shadow-md">
+
+    </header>
+</head>
+<body class="bg-gradient-to-br from-black-700 to-brown-1000 min-h-screen flex items-center justify-center p-4">
+    <div class="bg-white p-8 rounded-xl shadow-2xl w-full max-w-md border border-gray-200">
+        <h1 class="text-3xl font-extrabold text-gray-800 mb-6 text-center">Escreva sua data de nascimento para sabermos sua faixa etária?</h1>
+
+        <div class="mb-6">
+            <label for="birthYear" class="block text-gray-700 text-sm font-semibold mb-2">
+                Ano de Nascimento:
+            </label>
+            <input
+                type="number"
+                id="birthYear"
+                placeholder="Ex: 1990"
+                min="1900"
+                max="2025"
+                class="shadow-sm appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent transition duration-200 ease-in-out"
+            >
+        </div>
+
+        <button
+            id="checkButton"
+            class="w-full bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-3 px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-opacity-75 transition duration-200 ease-in-out transform hover:scale-105 shadow-lg"
+        >
+            Enviar
+        </button>
+
+        <div id="result" class="mt-8 p-4 bg-yellow-50 rounded-lg text-yellow-800 text-center font-semibold text-lg border border-brown-200 hidden">
+        </div>
+
+        <div id="errorMessage" class="mt-4 p-3 bg-red-100 rounded-lg text-red-700 text-center font-medium text-sm border border-red-300 hidden">
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const birthYearInput = document.getElementById('birthYear');
+            const checkButton = document.getElementById('checkButton');
+            const resultDiv = document.getElementById('result');
+            const errorMessageDiv = document.getElementById('errorMessage');
+
+            const currentYear = 2025;
+
+            function showErrorMessage(message) {
+                errorMessageDiv.textContent = message;
+                errorMessageDiv.classList.remove('hidden');
+                resultDiv.classList.add('hidden');
+            }
+
+            function hideErrorMessage() {
+                errorMessageDiv.classList.add('hidden');
+            }
+
+            function showResult(message) {
+                resultDiv.textContent = message;
+                resultDiv.classList.remove('hidden');
+                hideErrorMessage(); 
+            }
+
+            checkButton.addEventListener('click', function() {
+                const birthYear = parseInt(birthYearInput.value);
+
+                if (isNaN(birthYear) || birthYear < 1924 || birthYear > currentYear) {
+                    showErrorMessage('O seu filho da puta, se você ta no grau técnico e tem mais de 80 anos vc tem q se matar');
+                    return;
+                }
+
+                hideErrorMessage(); 
+
+                const age = currentYear - birthYear;
+                let ageGroup = '';
+
+                if (age >= 0 && age <= 12) {
+                    ageGroup = 'Menor de idade, você não tem idade para este site';
+                } else if (age >= 13 && age <= 17) {
+                    ageGroup = 'Adolescente, somente com permissão dos pais';
+                } else if (age >= 18 && age <= 59) {
+                    ageGroup = 'Adulto, permitido';
+                } else if (age >= 60) {
+                    ageGroup = 'Idoso, permitido';
+                } else {
+                    showErrorMessage('Não foi possível determinar sua categoria. Verifique o ano de nascimento.');
+                    return;
+                }
+
+                showResult(`Você tem ${age} anos e se encaixa na categoria: ${ageGroup}.`);
+            });
+        });
+    </script>
+</body>
+</html>
