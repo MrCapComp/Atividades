@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Seu Carrinho - TOBACCO</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+    <link href="css/styles.css" rel="stylesheet" />
+    <style>
+        h1.display-4 {
+            color: #000000 !important;
+        }
+
+        /* Os estilos do cabeçalho da página principal (home) */
+        header.bg-dark {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-logo-bg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: auto;
+            opacity: 0.3;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        footer.bg-dark {
+            background-color: #6e430c !important;
+        }
+
+        footer.bg-dark p {
+            color: r#ffffff !important;
+        }
+
+        header.bg-dark .text-white,
+        header.bg-dark .fw-bolder,
+        header.bg-dark .lead {
+            color: #ffffff !important;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container px-4 px-lg-5">
+            <img class="LogoTOBACCO" src="./fotos/LogoTOBACCO.png" alt="Logo da TOBACCO" width="50" height="50">
+            <a class="navbar-brand ms-2" href="#!">TOBACCO</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#!">Produtos em geral</a></li>
+                            <li>
+                                <hr class="dropdown-divider" />
+                            </li>
+                            <li><a class="dropdown-item" href="#!">produtos popular</a></li>
+                            <li><a class="dropdown-item" href="#!">New Arrivals</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <a class="btn btn-outline-dark" href="./">
+                    <i class="bi-cart-fill me-1"></i>
+                    Carrinho
+                    <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="bg-dark py-5">
+        <div class="container px-4 px-lg-5 my-5">
+            <img class="header-logo-bg" src="./fotos/LogoTOBACCO.png" alt="Logo de fundo TOBACCO">
+            <div class="text-center text-white header-content">
+                <style>
+                    p {
+                        font-family: Luminari, fantasy;
+                    }
+
+                    h1 {
+                        font-family: URW Chancery L, cursive;
+                    }
+                </style>
+                <h1 class="display-4 fw-bolder">Carrinho </h1>
+                <p class="lead fw-normal text-white-50 mb-0">Continue comprando!!!.</p>
+            </div>
+        </div>
+    </header>
+
+    <section class="py-5">
+        <div class="container px-4 px-lg-5">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Imagem</th>
+                                    <th scope="col">Produto</th>
+                                    <th scope="col">Preço</th>
+                                    <th scope="col">Quantidade</th>
+                                    <th scope="col">Total</th>
+                                    <th scope="col">Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Itens do carrinho serão inseridos aqui via JS -->
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="d-flex justify-content-end align-items-center mt-4">
+                        <h4 class="me-3" id="carrinhoTotal">Total: R$ 0,00</h4>
+                        <button class="btn btn-lg btn-success">Finalizar Compra</button>
+                    </div>
+                    <div class="text-center mt-5">
+                        <a class="btn btn-primary" href="index.html">Continuar Comprando</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-5 bg-dark">
+        <div class="container">
+            <p class="m-0 text-center text-white">Copyright &copy; Your Website 2023</p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Exibe produtos do localStorage
+        function formatarPreco(preco) {
+            if (!preco) return 0;
+            return parseFloat(preco.replace(/[^0-9,\.]/g, '').replace(',', '.'));
+        }
+        function removerProdutoCarrinho(index) {
+            let carrinho = JSON.parse(localStorage.getItem('carrinho_produtos')) || [];
+            carrinho.splice(index, 1);
+            localStorage.setItem('carrinho_produtos', JSON.stringify(carrinho));
+            location.reload();
+        }
+        document.addEventListener('DOMContentLoaded', function () {
+            const carrinho = JSON.parse(localStorage.getItem('carrinho_produtos')) || [];
+            const tbody = document.querySelector('tbody');
+            let total = 0;
+            tbody.innerHTML = '';
+            carrinho.forEach(function (produto, idx) {
+                let preco = formatarPreco(produto.price);
+                let qtd = parseInt(produto.quantidade) || 1;
+                let subtotal = preco * qtd;
+                total += subtotal;
+                tbody.innerHTML += `
+                <tr>
+                    <td><img src="${produto.image}" alt="${produto.name}" style="width:60px; height:auto;"></td>
+                    <td>${produto.name}</td>
+                    <td>${produto.price}</td>
+                    <td>${qtd}</td>
+                    <td>R$ ${subtotal.toFixed(2).replace('.', ',')}</td>
+                    <td><button class="btn btn-sm btn-outline-danger" onclick="removerProdutoCarrinho(${idx})">Remover</button></td>
+                </tr>`;
+            });
+            document.getElementById('carrinhoTotal').textContent = 'Total: R$ ' + total.toFixed(2).replace('.', ',');
+        });
+    </script>
+</body>
+
+</html>
