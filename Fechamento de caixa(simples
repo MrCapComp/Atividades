@@ -1,0 +1,122 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/MrCapComp/Atividades/blob/main/Fechamento%20de%20caixa(simples\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "###----FECHAMENTO DE CAIXA ----###\n",
+        "print(\"----Bem vindo ao fechamento de caixa!!!----\\n\\nEste é um sistema muito simples,\\napenas para fechar o caixa sem precisar fazer a conta, \\nbasta incluir a aquantidade de notas ou de moedas\")\n",
+        "\n",
+        "cinq_re = int(input(\"digite a quantidade de notas de 50 reais: \"))\n",
+        "mult1 = cinq_re * 50\n",
+        "\n",
+        "vinte_re = int(input(\"digite a quantidade de notas de 20 reais: \"))\n",
+        "mult2 = vinte_re * 20\n",
+        "\n",
+        "dez_re = int(input(\"digite a quantidade de notas de 10 reais: \"))\n",
+        "mult3 = dez_re * 10\n",
+        "\n",
+        "cinc_re = int(input(\"Digite a quantidade de notas de 5 reais: \"))\n",
+        "mult4 = cinc_re * 5\n",
+        "\n",
+        "dois_re = int(input(\"Digite a quantidade de notas de 2 reais: \"))\n",
+        "mult5 = dois_re * 2\n",
+        "\n",
+        "um_re = int(input(\"Digite a quantidade de moedas de 1 real: \"))\n",
+        "mult6 = um_re * 1\n",
+        "\n",
+        "cinq_cent = float(input(\"Digite a quantidade de moedas de 50 centavos: \"))\n",
+        "mult7 = cinq_cent * 0.50\n",
+        "\n",
+        "vintcinc_cent = float(input(\"Digite a quantidade de moedas de 25 centavos: \"))\n",
+        "mult8 = vintcinc_cent* 0.25\n",
+        "\n",
+        "dez_cent = float(input(\"Digite a quantidade de moedas de 10 centavos: \"))\n",
+        "mult9 = dez_cent * 0.10\n",
+        "\n",
+        "cinc_cent = float(input(\"diite a quantidade de moedas de 5 centavos:\"))\n",
+        "mult10 = cinc_cent * 0.05\n",
+        "\n",
+        "\n",
+        "conta = mult1 + mult2 + mult3 + mult4 + mult5 + mult6  + mult7 + mult8 + mult9 + mult10\n",
+        "\n",
+        "print(f\"Fechamendo de caixa de hoje é \\n####-- R${conta} --####\\n \")\n",
+        "print(f\"Quantidade e valor:\\n R${mult1} em notas de 50 reais\\n R${mult2} em notas de 20 reais\\n R${mult3} em notas de 10 reais\\n R${mult4} em notas de 5 reais\\n R${mult5} em notas de 2 reais\\n R${mult6} em moedas de 1 real\\n R${mult7} em moedas de 50 centavos\\n R${mult8} em moedas de 25 centavos\\n R${mult9} em moedas de 10 centavos\\n R${mult10} em moedas de 5 centavos\")\n"
+      ],
+      "metadata": {
+        "id": "PMhx3vfXW5fQ",
+        "outputId": "91f4a607-b106-4457-a6a3-fb0c11fe731f",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        }
+      },
+      "execution_count": 30,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "----Bem vindo ao fechamento de caixa!!!----\n",
+            "\n",
+            "Este é um sistema muito simples,\n",
+            "apenas para fechar o caixa sem precisar fazer a conta, \n",
+            "basta incluir a aquantidade de notas ou de moedas\n",
+            "digite a quantidade de notas de 50 reais: 1\n",
+            "digite a quantidade de notas de 20 reais: 2\n",
+            "digite a quantidade de notas de 10 reais: 3\n",
+            "Digite a quantidade de notas de 5 reais: 4\n",
+            "Digite a quantidade de notas de 2 reais: 5\n",
+            "Digite a quantidade de moedas de 1 real: 6\n",
+            "Digite a quantidade de moedas de 50 centavos: 7\n",
+            "Digite a quantidade de moedas de 25 centavos: 8\n",
+            "Digite a quantidade de moedas de 10 centavos: 9\n",
+            "diite a quantidade de moedas de 5 centavos:10\n",
+            "Fechamendo de caixa de hoje é \n",
+            "####-- R$162.9 --#### \n",
+            "Quantidade e valor:\n",
+            " R$50 em notas de 50 reais\n",
+            " R$40 em notas de 20 reaiszn R$30 em notas de 10 reais\n",
+            " R$20 em notas de 5 reais\n",
+            " R$10 em notas de 2 reais\n",
+            " R$6 em moedas de 1 real\n",
+            " R$3.5 em moedas de 50 centavos\n",
+            " R$2.0 em moedas de 25 centavos\n",
+            " R$0.9 em moedas de 10 centavos\n",
+            " R$0.5 em moedas de 5 centavos \n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "1 + 2 + 3 + 4 + 5 + 6 + 0,50 + 0,50 + 0,50 + ,50"
+      ],
+      "metadata": {
+        "id": "Cju-rQQIyeHx"
+      }
+    }
+  ],
+  "metadata": {
+    "colab": {
+      "name": "Conheça o Colab",
+      "provenance": [],
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "display_name": "Python 3",
+      "name": "python3"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 0
+}
