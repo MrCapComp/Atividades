@@ -1,0 +1,125 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/MrCapComp/Atividades/blob/main/dev%20de%20um%20mini%20jogo%20(desenvolvimento)\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "### ----- TUtorial ----- ###\n",
+        "personagens1 = {\n",
+        "    \"Senhor dos Anais\": {\"vida\": 150, \"salario\": 200, \"defesa\": 200},\n",
+        "    \"Cumpadi Washington\": {\"vida\": 250, \"salario\": 400, \"defesa\": 300},\n",
+        "    \"1155 ET\": {\"vida\": 10, \"salario\": 550, \"defesa\": 500}\n",
+        "}\n",
+        "print(\"---# Bem vindo ao Brasawood!! #---\\n\")\n",
+        "escolha = input(\"Escolha sua classe\\nSenhor dos Anais\\nCumpadi Washington\\n1155 ET\\n\")\n",
+        "\n",
+        "if escolha in personagens1:\n",
+        "  jogador = personagens1[escolha]\n",
+        "  print(f\"vc escolheu o {escolha},\\nstatus: {jogador}\")\n",
+        "else:\n",
+        "  print(\"classe não encontrada, por falta de escolha, vc virará um bolsonaro!!(fraquin)\")\n",
+        "  jogador ={\"vida\": 100, \"salario\": 5, \"defesa\": 5}\n",
+        "\n",
+        "inimigo = {\"nome\": \"Boletos\", \"vida\": 200, \"divida\": 100}\n",
+        "print(f\"A NAAAAAAAAAAAAAO!!! OS BOLETOS APARECEUUU!!\")\n",
+        "\n",
+        "while jogador ['vida'] > 0 and inimigo['vida'] > 0:\n",
+        "  print(\"\\n O zé, ve se nao se endivida, paga esse cara logo!!\")\n",
+        "  acao = input(\"mentalize 'A' para pagar ou 'F' para fugir e ficar com o\\nnome no serasa durante o resto da sua vida\").upper()\n",
+        "\n",
+        "  if acao == 'A':\n",
+        "    dano = jogador['salario']\n",
+        "    inimigo['vida'] -= dano\n",
+        "    print(f\"voce pagou uma parcela de R${dano}!!\\nSua divida abaixa para {inimigo['vida']}\")\n",
+        "  else:\n",
+        "    print('Oc não pagou e agr os homi ta atras doc até q vc descore q é um esqueleto e acaba sendo morto')\n",
+        "\n",
+        "  if inimigo['vida'] > 0:\n",
+        "    dano_inimigo = inimigo['divida'] - jogador['defesa']\n",
+        "    if dano_inimigo < 0: dano_inimigo = 0\n",
+        "\n",
+        "    jogador['vida'] -= dano_inimigo\n",
+        "    print(f\"os boletos chegaram mais caros esse mes!! seu saldo atual {jogador['vida']}\")\n",
+        "\n",
+        "  if jogador ['vida'] <= 0:\n",
+        "    print(\"\\n  VAI VIRA MENDINGO E SER EXPULSO DA SOCIEDADE ETERNAMENTE (FUTURO CRACKUDO(OPCIONAL))\")\n",
+        "  else:\n",
+        "    print(f\"\\nCARALHOOOOOOOO voce FEZ OQ NGM NUNCA CONSEGUE FAZER NO DIA A DIA!!! QUITAR AS DIVIDAS(FICAR NO AZUL(OPCIONAL))\")\n",
+        "\n",
+        "  input(\"gostou do jogo?\")\n",
+        "\n",
+        "### ---- BrassaWood ---- ###\n",
+        "\n",
+        "personagens2 = {\n",
+        "    \"Arqueiro\": {\"vida\": 180, \"atque\": 200, \"defesa\": 150},\n",
+        "    \"Espadachim\": {\"vida\": 250, \"ataque\": 400, \"defesa\": 200},\n",
+        "    \"Mestre dos Magos\": {\"vida\": 150, \"ataque\": 550, \"defesa\": 300}\n",
+        "}\n",
+        "\n",
+        "escolha1 = input(\"Escolha sua classe:\\n Arqueiro (vida=180, ataque=200, defesa=150)\\n Espadachim(vida=250, ataque=400, defesa=200)\\n Mestre dos Magos (Vida=150, Ataque=550, defesa=300)\")\n",
+        "if escolha in personagens2:\n",
+        "  jogador = personagens2[escolha1]\n",
+        "  print(f\"classe {escolha1} selecionada, {escolha1[0][1][2]}\")\n",
+        "while jogador:\n",
+        "\n",
+        "\n",
+        "\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "dZSRAwv2viP6",
+        "outputId": "1703d32a-dd67-4d61-ac3b-8bb09b61538c"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "---# Bem vindo ao Brasawood!! #---\n",
+            "\n",
+            "Escolha sua classe\n",
+            "Senhor dos Anais\n",
+            "Cumpadi Washington\n",
+            "1155 ET\n",
+            "1155 ET\n",
+            "vc escolheu o 1155 ET,\n",
+            "status: {'vida': 10, 'salario': 550, 'defesa': 500}\n",
+            "A NAAAAAAAAAAAAAO!!! OS BOLETOS APARECEUUU!!\n",
+            "\n",
+            " O zé, ve se nao se endivida, paga esse cara logo!!\n",
+            "mentalize 'A' para pagar ou 'F' para fugir e ficar com o\n",
+            "nome no serasa durante o resto da sua vidaA\n",
+            "voce pagou uma parcela de R$550!!\n",
+            "Sua divida abaixa para -350\n",
+            "\n",
+            "CARALHOOOOOOOO voce FEZ OQ NGM NUNCA CONSEGUE FAZER NO DIA A DIA!!! QUITAR AS DIVIDAS(FICAR NO AZUL(OPCIONAL))\n"
+          ]
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "display_name": "Python 3",
+      "name": "python3"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 0
+}
